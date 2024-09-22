@@ -62,9 +62,13 @@ function result() {
 	newStory = newStory.replace(':insertz:', zItem);
 	/* STEP 10: If the user has typed a name in the customName field, 
 	replace the name 'Bob' in the story with whatever they typed */
+	let pattern = '^[A-Za-z]+$';
 	if(customName.value != '') {
-		let name = customName.value;
-		newStory = newStory.replace('Bob', name);
+		if(!customName.value.match(pattern)){
+			newStory = newStory.replace('Bob', 'NoName');
+		}else{
+			newStory = newStory.replace('Bob', customName.value);
+		}
 	}
 	/* STEP 11: If the metric radio button has been checked, 
 	we need to convert the temperature and mass numbers in the story */
