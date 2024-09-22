@@ -77,7 +77,7 @@ function result() {
 		// the formula for conversion is °C = (°F - 32) x 5/9
 		let temp = (94 - 32) * 5 / 9;
 		// STEP 12b: Replace the string '94 fahrenheit' with the updated temperature in °C
-		newStory = newStory.replace('94 farenheit', temp + ' centigrade');
+		newStory = newStory.replace('94 farenheit', temp + ' celsius');
   }
 	/* STEP 13: Make the textContent property of the story variable (which references the paragraph) equal to newStory */
   	story.textContent = newStory;
@@ -87,7 +87,7 @@ function result() {
 
 // EVENT LISTENERS
 /* STEP 5: Add a click event listener to the randomize variable so that when the button it represents is clicked, the result() function is run. */
-document.getElementById('randomize').addEventListener('click', result);
+document.querySelector('.randomize').addEventListener('click', result);
 
 // This lab based on the excellent assessment challenge at https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Silly_story_generator
 
